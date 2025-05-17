@@ -1,0 +1,243 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f2f5;
+    margin: 0;
+    
+}
+
+    .calculator {
+        backdrop-filter: blur(15px);
+        width: 320px;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+    }
+
+.calculator:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.display {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: right;
+    font-size: 2em;
+    color: #333;
+    border: 1px solid #e9ecef;
+    min-height: 60px;
+    overflow-x: auto;  /* tampilkan scrollbar horizontal jika teks melebar */
+    
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: #f8f9fa;
+    color: #495057;
+    transition: all 0.2s;
+}
+
+.buttons {
+    /* tambahkan perspective */
+    perspective: 1000px;
+}
+
+button {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 2px solid transparent;
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: 
+        translateY(-3px) 
+        rotateX(5deg) 
+        rotateZ(1deg) 
+        translateZ(10px);
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.15),
+        0 8px 16px rgba(0,0,0,0.1),
+        inset 0 -2px 4px rgba(255,255,255,0.3);
+    border-image: linear-gradient(45deg) 1;
+    
+}
+
+button:active {
+    transform: 
+        translateY(2px) 
+        rotateX(-2deg) 
+        translateZ(0);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Efek border 3D */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+button:hover::before {
+    border-image: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.2)
+    ) 1;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+/* Efek kedalaman khusus untuk operator */
+button.operator:hover {
+    transform: 
+        translateY(-3px) 
+        rotateX(8deg) 
+        translateZ(15px);
+    box-shadow: 
+        0 8px 16px rgba(74,144,226,0.2),
+        0 12px 24px rgba(74,144,226,0.1);
+}
+
+button.special:hover {
+    transform: 
+        translateY(-3px) 
+        rotateX(8deg) 
+        translateZ(15px);
+    box-shadow: 
+        0 8px 16px rgba(255,107,107,0.2),
+        0 12px 24px rgba(255,107,107,0.1);
+}
+
+body {
+   
+    background-attachment: scroll;
+    background-size: cover;
+    animation: backgroundMove 30s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.display {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: right;
+    color: #333;
+    border: 1px solid #e9ecef;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.equation {
+    font-size: 1.2em;
+    color: #666;
+    min-height: 25px;
+    opacity: 0.8;
+    word-wrap: break-word;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: url('orangbalapan.gif') no-repeat center center fixed;
+}
+
+.calculator {
+    background: #1a1a2a;
+    border: 2px solid #00f7ff;
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.3);
+}
+
+.display {
+    background: #000000;
+    border: 1px solid #ff00ff;
+    color: #00f7ff;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+.equation {
+    color: #ff00ff;
+    font-family: 'Rajdhani', sans-serif;
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+button {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    background: #2a2a4a;
+    color: #00f7ff;
+    border: 1px solid #00f7ff;
+    text-shadow: 0 0 8px rgba(0, 247, 255, 0.3);
+}
+
+button.operator {
+    background: #4a004a;
+    color: #ff00ff;
+    border-color: #ff00ff;
+}
+
+button.special {
+    background: #002a4a;
+    color: #00f7ff;
+}
+
+button.equals {
+    background: #004a00;
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+button:hover {
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.5);
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.cyberpunk-alert {
+    border: 2px solid #ff00ff !important;
+    box-shadow: 0 0 20px rgba(255,0,255,0.5) !important;
+    font-family: 'Orbitron', sans-serif;
+}
